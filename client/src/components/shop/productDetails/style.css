@@ -1,0 +1,56 @@
+@import url(
+
+fieldset,
+label {
+  margin: 0;
+  padding: 0;
+}
+
+/****** Style Star Rating Widget *****/
+
+.rating {
+  border: none;
+  float: left;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 2px;
+}
+
+.rating>input {
+  display: none;
+}
+
+.rating>label:before {
+  margin: 4px;
+  font-size: 1.9em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.rating>label {
+  color: #e5e7eb;
+  float: right;
+  cursor: pointer;
+}
+
+.rating>label:hover {
+  transform: scale(1.15);
+}
+
+
+.rating>input:checked~label,
+.rating:not(:checked)>label:hover,
+.rating:not(:checked)>label:hover~label {
+  color: #f59e0b;
+}
+
+.rating>input:checked+label:hover,
+.rating>input:checked~label:hover,
+.rating>label:hover~input:checked~label,
+.rating>input:checked~label:hover~label {
+  color: #d97706;
+}
